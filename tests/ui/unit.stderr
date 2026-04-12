@@ -1,0 +1,5 @@
+error: Toggleable requires a named bool field
+ --> tests/ui/unit.rs:5:8
+  |
+5 | struct Unit;
+  |        ^^^^

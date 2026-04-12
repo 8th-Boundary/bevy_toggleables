@@ -1,0 +1,5 @@
+error: expected a `bool` toggle field named `active` or marked with #[toggleable]
+ --> tests/ui/missing.rs:5:8
+  |
+5 | struct Missing {
+  |        ^^^^^^^

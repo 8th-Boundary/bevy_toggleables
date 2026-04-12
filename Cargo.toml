@@ -1,0 +1,28 @@
+[package]
+name = "bevy_toggleables"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+publish = false
+description = "Fast per-component active/inactive toggles for Bevy ECS"
+
+[features]
+default = ["derive", "toggle_ext"]
+derive = ["dep:bevy_toggleables_derive"]
+toggle_ext = []
+debug_checks = []
+reflect = []
+
+[dependencies]
+bevy_ecs = "0.18.1"
+bevy_toggleables_derive = { path = "../bevy_toggleables_derive", optional = true }
+
+[dev-dependencies]
+criterion = { version = "0.5", default-features = true }
+trybuild = "1"
+
+[[bench]]
+name = "toggleables_matrix"
+harness = false

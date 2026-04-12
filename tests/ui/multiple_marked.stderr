@@ -1,0 +1,6 @@
+error: multiple #[toggleable] fields are not allowed
+ --> tests/ui/multiple_marked.rs:8:5
+  |
+8 | /     #[toggleable]
+9 | |     second: bool,
+  | |________________^

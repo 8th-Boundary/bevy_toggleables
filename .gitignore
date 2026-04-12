@@ -1,0 +1,5 @@
+/target
+/Cargo.lock
+
+# Criterion and trybuild artifacts live under target, but keep this here for
+# standalone use of the crate directory.

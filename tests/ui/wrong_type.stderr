@@ -1,0 +1,5 @@
+error: the active field must have type bool or be marked with #[toggleable]
+ --> tests/ui/wrong_type.rs:6:5
+  |
+6 |     active: u8,
+  |     ^^^^^^^^^^

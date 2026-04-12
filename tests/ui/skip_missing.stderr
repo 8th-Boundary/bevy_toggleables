@@ -1,0 +1,31 @@
+error[E0277]: the trait bound `&Label: bevy_toggleables::iter::ToggleItemMatch<(Frozen,)>` is not satisfied
+  --> tests/ui/skip_missing.rs:13:26
+   |
+13 |     let _ = query.iter().skip_inactive::<Frozen>();
+   |                          ^^^^^^^^^^^^^ the trait `bevy_toggleables::iter::ToggleItemMatch<(Frozen,)>` is not implemented for `&Label`
+   |
+   = help: the following other types implement trait `bevy_toggleables::iter::ToggleItemMatch<Types>`:
+             `&T` implements `bevy_toggleables::iter::ToggleItemMatch<(T,)>`
+             `&mut T` implements `bevy_toggleables::iter::ToggleItemMatch<(T,)>`
+             `(I1, I2)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1, T2)>`
+             `(I1, I2)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1,)>`
+             `(I1, I2, I3)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1, T2)>`
+             `(I1, I2, I3)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1, T2, T3)>`
+             `(I1, I2, I3)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1,)>`
+             `(I1, I2, I3, I4)` implements `bevy_toggleables::iter::ToggleItemMatch<(T1, T2)>`
+           and $N others
+note: the method call chain might not have had the expected associated types
+  --> tests/ui/skip_missing.rs:13:19
+   |
+13 |     let _ = query.iter().skip_inactive::<Frozen>();
+   |             ----- ^^^^^^ `Iterator::Item` is `&Label` here
+   |             |
+   |             this expression has type `Query<'_, '_, &Label>`
+note: required by a bound in `skip_inactive`
+  --> src/iter.rs
+   |
+   |     fn skip_inactive<T>(self) -> ToggleFilter<Self, (T,)>
+   |        ------------- required by a bound in this associated function
+...
+   |         Self::Item: ToggleItemMatch<(T,)>,
+   |                     ^^^^^^^^^^^^^^^^^^^^^ required by this bound in `ToggleIterExt::skip_inactive`

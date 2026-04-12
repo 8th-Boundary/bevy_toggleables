@@ -1,0 +1,5 @@
+error: an explicit #[toggleable] field conflicts with a separate active: bool field
+ --> tests/ui/conflict.rs:8:5
+  |
+8 |     active: bool,
+  |     ^^^^^^^^^^^^

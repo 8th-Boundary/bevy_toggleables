@@ -1,0 +1,15 @@
+error[E0271]: type mismatch resolving `<&Label as Deref>::Target == Burning`
+  --> tests/ui/filter_missing.rs:18:26
+   |
+18 |     let _ = query.iter().where_toggles::<(Frozen, Burning)>((true, false));
+   |                          ^^^^^^^^^^^^^ expected `Burning`, found `Label`
+   |
+   = note: required for `(&Frozen, &Label)` to implement `bevy_toggleables::iter::ToggleItemMatch<(Frozen, Burning)>`
+note: required by a bound in `where_toggles`
+  --> src/iter.rs
+   |
+   |     fn where_toggles<Types>(
+   |        ------------- required by a bound in this associated function
+...
+   |         Self::Item: ToggleItemMatch<Types>,
+   |                     ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `ToggleIterExt::where_toggles`

@@ -1,0 +1,5 @@
+error: #[toggleable] does not take arguments
+ --> tests/ui/attr_args.rs:6:5
+  |
+6 |     #[toggleable(foo)]
+  |     ^^^^^^^^^^^^^^^^^^

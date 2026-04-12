@@ -1,0 +1,5 @@
+error: Toggleable only supports named-field structs
+ --> tests/ui/tuple.rs:5:16
+  |
+5 | struct BadTuple(bool, u8);
+  |                ^^^^^^^^^^
