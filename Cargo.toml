@@ -17,7 +17,7 @@ reflect = []
 
 [dependencies]
 bevy_ecs = "0.18.1"
-bevy_toggleables_derive = { path = "../bevy_toggleables_derive", optional = true }
+bevy_toggleables_derive = { path = "bevy_toggleables_derive", optional = true }
 
 [dev-dependencies]
 criterion = { version = "0.5", default-features = true }
