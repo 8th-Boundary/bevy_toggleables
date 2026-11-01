@@ -16,7 +16,7 @@ debug_checks = []
 reflect = []
 
 [dependencies]
-bevy_ecs = "0.18.1"
+bevy_ecs = "0.20.0"
 bevy_toggleables_derive = { path = "bevy_toggleables_derive", optional = true }
 
 [dev-dependencies]

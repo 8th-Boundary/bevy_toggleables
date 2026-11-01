@@ -1,5 +1,12 @@
 # bevy_toggleables
 
+## Bevy compatibility
+
+| bevy_toggleables | Bevy |
+|---|---|
+| Workspace source | 0.20.x |
+| Earlier 0.1.0 source | 0.18.x |
+
 Small Bevy ECS helpers for components that carry an in-place boolean active flag.
 
 ## Why This Exists
